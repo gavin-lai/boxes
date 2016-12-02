@@ -1,9 +1,10 @@
 description: A simple and robust FastCGI Process Manager for PH
-icon: php.png
+icon: ed085cfd-8707-4ef7-9611-6e84498d27c6
 id: ed085cfd-8707-4ef7-9611-6e84498d27c6
 name: PHP-FPM
 requirements:
 - linux
+schema: http://elasticbox.net/schemas/boxes/script
 variables:
 - name: PHP_USER
   required: false

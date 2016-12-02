@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 {% if server %}
 if mount | grep {{ LOCAL_PATH }} > /dev/null; then
@@ -7,6 +7,6 @@ else
     mkdir -p {{ LOCAL_PATH }}
     mount {{ server.address.private }}:{{ server.EXPORT_DIRECTORY }} {{ LOCAL_PATH }}
 fi
-{% endif %}
-
+{% else %}
 exit 0;
+{% endif %}

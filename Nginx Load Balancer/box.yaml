@@ -1,9 +1,10 @@
 description: HTTP load balancer using the Nginx web server
-icon: nginxIloadIbalancer.png
-id: 50283d47-a5fa-4d35-863c-c28888db0882
+icon: 0819b5d8-047c-4783-8051-e48399a1c840
+id: b252bb6e-99e4-48b8-b5de-8c5dc4603e14
 name: Nginx Load Balancer
 requirements:
 - linux
+schema: http://elasticbox.net/schemas/boxes/script
 variables:
 - name: http
   required: true
@@ -46,5 +47,4 @@ variables:
   type: Binding
   value: AnyBox
   visibility: private
-version: '0.1'
 

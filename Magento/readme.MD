@@ -18,6 +18,7 @@ This box installs and configures Magento using nginx and php-fpm boxes to run th
 |   **MAGENTO_PATH** | Directory to install Magento |/opt/magento|
 |   **http** | The port in which the Nginx will listen to|80|
 |   **mysql** | Binding to a mysql server instance||
+|   **redis** | Binding to a redis server instance||
 |   **nginx** | Nginx box variable||
 |   **php** | PHP-FPM box variable||
 |   **nfs** | NFS client box varible|||

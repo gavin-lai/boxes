@@ -1,9 +1,10 @@
 description: Mounts an NFS endpoint
-icon: nfs.png
+icon: 320e8be7-5d05-4f74-a040-5d74836ae608
 id: 320e8be7-5d05-4f74-a040-5d74836ae608
 name: NFS Client
 requirements:
 - linux
+schema: http://elasticbox.net/schemas/boxes/script
 variables:
 - name: LOCAL_PATH
   required: true

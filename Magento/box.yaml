@@ -1,40 +1,34 @@
 description: Magento Web Layer
-icon: magento.png
-id: f4dd017f-4bec-42f4-9614-bd27fd8baf74
+icon: f4dd017f-4bec-42f4-9614-bd27fd8baf74
+id: de1841f7-cfbe-4443-a996-d13807271a18
 name: Magento
 requirements:
 - internal
 - linux
+schema: http://elasticbox.net/schemas/boxes/script
 variables:
-- name: PHP_USER
-  required: false
-  scope: php
-  type: Text
-  value: nginx
-  visibility: internal
-- name: PHP_GROUP
-  required: false
-  scope: php
-  type: Text
-  value: nginx
-  visibility: internal
-- name: NGINX_USER
-  required: false
-  scope: nginx
-  type: Text
-  value: nginx
-  visibility: internal
-- name: NGINX_GROUP
-  required: false
-  scope: nginx
-  type: Text
-  value: nginx
-  visibility: internal
 - name: LOCAL_PATH
   required: true
   scope: nfs
   type: Text
-  value: /opt/magento/media
+  value: /mnt/media
+  visibility: internal
+- name: CONFIG_FILE
+  required: false
+  scope: redis.haproxy
+  type: File
+  value: files/haproxy.conf
+  visibility: public
+- name: CONFIG_FILE_NAME
+  required: false
+  scope: redis.haproxy
+  type: Text
+  value: redis.cfg
+  visibility: public
+- name: MAGENTO_URL
+  required: false
+  type: Text
+  value: https://s3-us-west-1.amazonaws.com/ebx-public/magento-1.9.2.2.tar-2015-10-27-03-19-32.gz
   visibility: internal
 - name: SERVER_NAME
   required: false
@@ -46,11 +40,6 @@ variables:
   type: Port
   value: '80'
   visibility: public
-- name: MAGENTO_VERSION
-  required: false
-  type: Text
-  value: 1.9.1.0
-  visibility: private
 - name: MAGENTO_CONF
   required: false
   type: File
@@ -66,11 +55,18 @@ variables:
   type: Text
   value: /opt/magento
   visibility: internal
-- name: mysql
+- automatic_updates: major
+  name: redis
   required: false
-  type: Binding
-  value: 53b978c0-3c68-4a13-99b6-035aad38e95c
-  visibility: private
+  type: Box
+  value: 053c6467-13e4-47fb-b6cf-46f51e6c2294
+  visibility: public
+- automatic_updates: major
+  name: mysql
+  required: false
+  type: Box
+  value: f6deab86-3744-4be3-bd48-804697859423
+  visibility: public
 - automatic_updates: major
   name: nginx
   required: false

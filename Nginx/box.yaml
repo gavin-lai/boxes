@@ -1,10 +1,16 @@
-description: A free, open-source, high-performance HTTP server
-icon: nginx.png
+description: A free, open-source, high-performance HTTP server and
+icon: 8e176772-5c6c-4d5a-8f6e-cbf342142520
 id: 8e176772-5c6c-4d5a-8f6e-cbf342142520
 name: Nginx
 requirements:
 - linux
+schema: http://elasticbox.net/schemas/boxes/script
 variables:
+- name: http
+  required: false
+  type: Port
+  value: '80'
+  visibility: public
 - name: PUBLIC_SSL_CERTIFICATE
   required: false
   type: File
